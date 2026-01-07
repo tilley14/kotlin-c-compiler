@@ -161,12 +161,3 @@ fun lex(source: String): List<Token> {
 
     return tokens
 }
-
-
-
-
-
-fun tmp(){
-
-
-}
