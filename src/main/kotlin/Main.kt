@@ -1,5 +1,6 @@
 import java.io.File
 import kotlin.system.exitProcess
+import kotlin.system.measureTimeMillis
 
 
 fun assemblyFormat(retVal : String): String {
@@ -49,7 +50,17 @@ fun main(args: Array<String>) {
         }
     """.trimIndent()
 
-    lex(source)
+    var tokens: List<Token>
+    val timeToLex = measureTimeMillis {
+        tokens = lex(source)
+    }
+
+    tokens.forEach {
+        println(it)
+    }
+
+    println("Time to lex $timeToLex ms")
+
 
 
 //    if (args.size != 1) {
